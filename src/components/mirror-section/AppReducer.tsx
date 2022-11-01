@@ -1,11 +1,9 @@
-import { actionTypes } from "../types/reducerTypes";
+import { actionTypes } from "../../types/reducerTypes";
 
-const Reducer = (state: object, action: actionTypes) => {
+const Reducer = (state: object, action: actionTypes): any => {
   switch (action.type) {
     case 'flip':
       return action.payload.updated;
-    case 'sizes':
-      return action.payload.sizes;
     default:
       return (
         {

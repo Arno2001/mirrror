@@ -1,14 +1,12 @@
 import type { NextPage } from 'next'
-import { useReducer } from 'react'
-import '../styles/Home.module.css'
-import Header from '../src/components/Header'
-import ImageUpload from '../src/components/ImageUpload'
+import { Header } from '../src/components/header/header'
+import { Section } from '../src/components/section/section'
 
 const Home: NextPage = () => {
   return (
-    <div className="App" >
+    <div>
       <Header />
-      <ImageUpload />
+      <Section />
     </div>
   )
 }

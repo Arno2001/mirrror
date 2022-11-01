@@ -3,7 +3,7 @@ import nc from "next-connect"
 import { existsSync, unlinkSync } from "fs"
 
 export const config = {
-  api : {
+  api: {
     bodyParser: false
   }
 }
@@ -18,16 +18,14 @@ const handler = nc({
   attachParams: true
 })
   .delete((req: reqType, res) => {
-  let imageName = req.params.wild.split('/')[2];
-  console.log(imageName);
-  
-  const imageExists = existsSync(resolve(`./public/images/${imageName}`));
-  
+    let imageName = req.params.wild.split('/')[2];
+    const imageExists = existsSync(resolve(`./public/images/${imageName}`));
+
     if (imageExists === false) {
-    return { message: 'image does not exists' };
-  }
-  unlinkSync(resolve(`./public/images/${imageName}`))
-  res.end('successfully deleted')
-});
+      return { message: 'image does not exists' };
+    }
+    unlinkSync(resolve(`./public/images/${imageName}`))
+    res.end('successfully deleted')
+  });
 
 export default handler;
